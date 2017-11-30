@@ -1,2 +1,1 @@
-# SpotifyReact
 # Portfolio
