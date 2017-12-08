@@ -10,7 +10,6 @@ module.exports = {
   devServer: {
     inline: true,
     historyApiFallback: true,
-    port: process.env.PORT,
     contentBase: './build'
   },
   module: {
