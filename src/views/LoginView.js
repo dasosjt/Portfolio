@@ -6,7 +6,7 @@ export default class LoginView extends React.Component{
     super(props)
 
     this.state = {
-      user: "",
+      user: "admin",
       pin: ""
     }
   }
@@ -30,22 +30,31 @@ export default class LoginView extends React.Component{
               onSubmit={ (e) => {
                 e.preventDefault() 
                 this.props.verifyLogin(this.state.user, this.state.pin) }}>
-              
-              <label htmlFor="normal">Usuario</label>
-              <Input 
-                id="normal" 
-                value={ this.state.user } 
-                onChange={ (e) => this.setState({ user: e.target.value }) }/>
-
-              <label htmlFor="normal">PIN</label>
-              <Input 
-                id="normal" 
-                type="password" 
-                value={ this.state.pin } 
-                onChange={ (e) => this.setState({ pin: e.target.value }) }/>
-              <Button 
-                primary 
-                className="is-pulled-right"> Enviar </Button>
+              <div className="field">
+                <label className="label">Usuario</label>
+                <div className="select">
+                  <select 
+                    value={ this.state.user }
+                    onChange={ (e) => this.setState({ user: e.target.value}) }>
+                    <option value={ "admin" }>admin</option>
+                    <option value={ "admin1" }>admin1</option>
+                    <option value={ "admin2" }>admin2</option>
+                  </select>
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">PIN</label>
+                <Input 
+                  type="password" 
+                  value={ this.state.pin } 
+                  onChange={ (e) => this.setState({ pin: e.target.value }) }/>
+              </div>
+            <Button 
+              primary
+              onClick={ (e) => {
+                e.preventDefault() 
+                this.props.verifyLogin(this.state.user, this.state.pin) }} 
+              className="is-pulled-right"> Enviar </Button>
             </form>
           </Container>
         </Hero.Body>
