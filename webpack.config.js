@@ -32,7 +32,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'PORT': JSON.stringify('production')
+        'NODE_ENV': JSON.stringify('production')
       }
     }),
   ]
