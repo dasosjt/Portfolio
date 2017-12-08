@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
   },
   devServer: {
+    inline: true,
     historyApiFallback: true,
     port: process.env.PORT || 3000
   },
